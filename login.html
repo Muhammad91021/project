@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kurdish Books — Admin Login</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;1,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="brand">
+        <span class="brand-en">Kurdish Books</span>
+        <span class="brand-tag">Pirtukxane &middot; Est. 2026</span>
+    </div>
+    <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="books.html">Books</a>
+        <a href="login.html">Admin Login</a>
+    </nav>
+</header>
+
+<section class="auth-section">
+    <div class="form-box">
+        <span class="eyebrow">Staff Only</span>
+        <h2>Admin Login</h2>
+
+        <p class="notice notice-error" id="errorMsg" style="display:none;">Wrong username or password.</p>
+
+        <form action="php/login.php" method="POST">
+            <div class="field">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="field">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-gold">Login</button>
+        </form>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="kilim-band"></div>
+    <div class="footer-inner">
+        <p>&copy; 2026 Kurdish Books</p>
+        <span class="footer-tag">Kurdish Books Project</span>
+    </div>
+</footer>
+
+<script>
+    if (window.location.search.indexOf("error=1") !== -1) {
+        document.getElementById("errorMsg").style.display = "block";
+    }
+</script>
+
+</body>
+</html>

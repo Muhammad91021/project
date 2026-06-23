@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kurdish Books — Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;1,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="brand">
+        <span class="brand-en">Kurdish Books</span>
+        <span class="brand-tag">Pirtukxane &middot; Est. 2026</span>
+    </div>
+    <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="books.html">Books</a>
+        <a href="login.html">Admin Login</a>
+    </nav>
+</header>
+
+<section class="page-hero">
+    <span class="eyebrow">Staff Dashboard</span>
+    <h2>Admin Panel</h2>
+</section>
+<div class="kilim-band"></div>
+
+<div class="admin-wrap">
+    <div class="logout-bar">
+        <a href="php/logout.php">Logout</a>
+    </div>
+
+    <div class="admin-grid">
+        <div class="form-box">
+            <span class="eyebrow">New Entry</span>
+            <h2>Add Book</h2>
+
+            <p class="notice notice-success" id="successMsg" style="display:none;">Book added successfully.</p>
+
+            <form action="php/add_book.php" method="POST">
+                <div class="field">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="field">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="author" required>
+                </div>
+                <div class="field">
+                    <label for="price">Price</label>
+                    <input type="text" id="price" name="price" required>
+                </div>
+                <div class="field">
+                    <label for="image">Image path (example: images/book1.jpg)</label>
+                    <input type="text" id="image" name="image" required>
+                </div>
+                <button type="submit" class="btn btn-gold">Add Book</button>
+            </form>
+        </div>
+
+        <div class="admin-books">
+            <h3>Current Catalog</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody id="bookTable"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <div class="kilim-band"></div>
+    <div class="footer-inner">
+        <p>&copy; 2026 Kurdish Books</p>
+        <span class="footer-tag">Kurdish Books Project</span>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+    loadBooksTable("bookTable");
+    if (window.location.search.indexOf("added=1") !== -1) {
+        document.getElementById("successMsg").style.display = "block";
+    }
+</script>
+
+</body>
+</html>

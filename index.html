@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kurdish Books</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;1,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="brand">
+        <span class="brand-en">Kurdish Books</span>
+        <span class="brand-tag">Pirtukxane &middot; Est. 2026</span>
+    </div>
+    <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="books.html">Books</a>
+        <a href="login.html">Admin Login</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <span class="eyebrow">Kurdish Literature, Curated</span>
+    <h2>Stories carried in <em>Kurdi</em>, page by page</h2>
+    <p>A small, honest collection of Kurdish books — poetry, prose, and history — gathered in one shelf.</p>
+    <a href="books.html" class="btn btn-gold">Browse the Shelf</a>
+</section>
+<div class="kilim-band"></div>
+
+<section class="section--shelf">
+    <div class="section-heading">
+        <span class="eyebrow">Selected Volumes</span>
+        <h3>Featured Books</h3>
+    </div>
+    <div class="books-container" id="featuredBooks"></div>
+</section>
+
+<footer class="site-footer">
+    <div class="kilim-band"></div>
+    <div class="footer-inner">
+        <p>&copy; 2026 Kurdish Books</p>
+        <span class="footer-tag">Kurdish Books Project</span>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+    loadBooks("featuredBooks");
+</script>
+
+</body>
+</html>
